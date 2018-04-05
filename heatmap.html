@@ -1,0 +1,130 @@
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+	<head></head>
+
+	<body>
+
+		<footer>
+			<script type="text/javascript"
+  				src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC88L7E0GnqSs-rDBOmHNjfO2Xq7j46EuQ&libraries=visualization">
+			</script>
+
+			<script>
+				var heatMapData = [
+  				{location: new google.maps.LatLng(37.791116, -122.403816), weight: 0.6},
+  				{location: new google.maps.LatLng(37.759174, -122.419066), weight: 0.3},
+  				{location: new google.maps.LatLng(37.784317, -122.407563), weight: 0.3},
+  				{location: new google.maps.LatLng(37.786848, -122.421547), weight: 0.6},
+  				{location: new google.maps.LatLng(37.782, -122.439), weight: 2},
+  				{location: new google.maps.LatLng(37.782, -122.437), weight: 2},
+  				{location: new google.maps.LatLng(37.782, -122.435), weight: 2},
+  				{location: new google.maps.LatLng(37.785, -122.447), weight: 3},
+  				{location: new google.maps.LatLng(37.785, -122.445), weight: 2},
+  				{location: new google.maps.LatLng(37.785, -122.445), weight: 2},
+  				{location: new google.maps.LatLng(37.785, -122.441), weight: 2},
+  				{location: new google.maps.LatLng(37.785, -122.445), weight: 2},
+  				{location: new google.maps.LatLng(37.785, -122.437), weight: 2},
+  				{location: new google.maps.LatLng(37.785, -122.435), weight: 3}
+				];
+
+				var sanFrancisco = new google.maps.LatLng(37.774546, -122.433523);
+
+				map = new google.maps.Map(document.getElementById('map'), {
+  					center: sanFrancisco,
+  					zoom: 13,
+  					mapTypeId: 'satellite'
+				});
+
+				var heatmap = new google.maps.visualization.HeatmapLayer({
+				  data: heatMapData
+				});
+				heatmap.setMap(map);
+			</script>
+		</footer>
+	</body>
+</html>
+
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Heatmaps</title>
+    <style>
+      /* to have the map be displayed as large as possible */
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=visualization"></script>
+    <script>
+var map, pointarray, heatmap;
+ 
+// a shortened version of the data for Google's taxi example
+var taxiData = [
+  {location: new google.maps.LatLng(37.791116, -122.403816), weight: 0.8},
+  {location: new google.maps.LatLng(37.759174, -122.419066), weight: 0.3},
+  {location: new google.maps.LatLng(37.784317, -122.407563), weight: 0.3},
+  {location: new google.maps.LatLng(37.786848, -122.421547), weight: 0.8},
+  {location: new google.maps.LatLng(37.764607, -122.432452), weight: 1.5},
+  {location: new google.maps.LatLng(37.74146, -122.422484), weight: 1.5},
+  {location: new google.maps.LatLng(37.731503, -122.45237), weight: 0.3},
+  {location: new google.maps.LatLng(37.711329, -122.471316), weight: 0.8},
+  {location: new google.maps.LatLng(37.76344, -122.478648), weight: 0.3},
+  {location: new google.maps.LatLng(37.728458, -122.403991), weight: 1.5},
+  {location: new google.maps.LatLng(37.793268, -122.400323), weight: 0.3},
+  {location: new google.maps.LatLng(37.784303, -122.409647), weight: 1.5},
+  {location: new google.maps.LatLng(37.760777, -122.421505), weight: 0.8},
+  {location: new google.maps.LatLng(37.749194, -122.418116), weight: 0.3},
+  {location: new google.maps.LatLng(37.776604, -122.414319), weight: 0.6},
+  {location: new google.maps.LatLng(37.787364, -122.45299), weight: 1},
+  /*{location: new google.maps.LatLng(37.728947	-122.404201), weight: 1},
+  {location: new google.maps.LatLng(37.742375, -122.421933), weight: 0.3},
+  {location: new google.maps.LatLng(37.796308, -122.421907), weight: 0.6},
+  {location: new google.maps.LatLng(37.784303, -122.409647), weight: 0.3},
+  {location: new google.maps.LatLng(37.780728, -122.396522), weight: 1},
+  {location: new google.maps.LatLng(37.752439, -122.41625), weight: 0.3},*/
+  // ...
+];
+ 
+ 
+function initialize() {
+  // the map's options
+  var mapOptions = {
+    zoom: 13,
+    center: new google.maps.LatLng(37.774546, -122.433523),
+    mapTypeId: google.maps.MapTypeId.SATELLITE
+  };
+ 
+  // the map and where to place it
+  map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+ 
+  var pointArray = new google.maps.MVCArray(taxiData);
+ 
+  // what data for the heatmap and how to display it
+  heatmap = new google.maps.visualization.HeatmapLayer({
+    data: pointArray,
+    radius: 50
+  });
+ 
+  // placing the heatmap on the map
+  heatmap.setMap(map);
+}
+ 
+// as soon as the document is ready the map is initialized
+google.maps.event.addDomListener(window, 'load', initialize);
+ 
+    </script>
+  </head>
+ 
+  <body>
+    <!-- this is where the map finally is drawn onto -->
+    <div id="map-canvas"></div>
+  </body>
+</html>
+

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Business Casual - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/business-casual.min.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      <span class="site-heading-upper text-primary mb-3">A Free Bootstrap 4 Business Theme</span>
+      <span class="site-heading-lower">Website Title</span>
+    </h1>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Start Bootstrap</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="index.html">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="about.html">Restaurants</a>
+            </li>
+            <li class="nav-item active px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="products.html">Your Fridge</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="product-item">
+          <div class="product-item-title d-flex">
+            <div class="bg-faded p-5 d-flex ml-auto rounded">
+              <h2 class="section-heading mb-0">
+                <span class="section-heading-upper">Simple Recipe Finder</span>
+                <span class="section-heading-lower">Enter Your Ingredients</span>
+              </h2>
+            </div>
+          </div>
+          <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/products-01.jpg" alt="">
+          <div class="product-item-description d-flex mr-auto">
+            <div class="bg-faded p-5 rounded">
+              <p class="mb-0">By entering the names of the items you have in your fridge, our algorithm will find recipes that you can make at your home.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="row">::before
+      <div class="small-12 medium-12 large-12 column">
+        <p>Type your ingredients in.</p>
+        <form data-abide id="siv-form" action="#" accept-charset="utf-8"
+        class="panel" method="post" novalidate="novalidate">
+          <label>
+            "Ingredients"<textarea id="ingredients" style="height: 260px" placeholder="one ingredient per line"" aria-invalid="false"></textarea>
+          </label>
+          <label>
+            "Number of Results (between 1 and 50)"
+            <input id="numberResults" type="number" min="1" max="100" style="width:56px;" value="25" aria-invalid="false">
+          </label>
+          <label>
+            "Ranking"<br>
+            <select id="ranking" style="width:250px">
+              <option value="1">Maximize ingredient use first</option>
+              <option value="2">Minimize missing ingredients first</option>
+            </select>
+          </label>
+          <label>
+            "License"
+            <br>
+            <select id="onlyOpenLicense" style="width: 250px">
+              <option value="false">All</option>
+              <option value="true">Only attribution</option>
+            </select>
+          </label>
+          <div class="button blue right" onclick="findRecipesByIngredients(); return false;">Find Recipes</div>
+          <div class="clearOnly"></div>
+          <div id="previewWidget" style="overflow-x: hidden; height: 800px; display: block;">
+            <ul id="recipeList" class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 column itemList">
+              ::before
+              <li><div id="recipeReviewBox-857756" class="recipePreviewBox recipeBoxId-0">
+                <div class="recipeImageBox">
+                  <div class="recipeId">857756</div>
+                  <h4>
+                    <a href="/recipes/hawaiian-strawberry-smoothie-857756" Hawaiian strawberry smoothie</a>
+                  </h4>
+                  <a href="/recipes/hawaiian-strawberry-smoothie-857756">
+                    <div class="img" style="background-image:url(https://webknox.com/recipeImages/857756-312x231.jpg)"></div>
+                  </a>
+                </div>
+                </div>
+              </li>
+              <li><div id="recipePreviewBox-507207" class="recipePreviewBox recipeBoxId-0">
+                <div class="recipeImageBox">
+                  <div class="recipeId">507207</div>
+                    <h4><a href="/recipes/watermelon-peach-slushies-507207">Watermelon-Peach Slushies</a></h4>
+                    <a href="/recipes/watermelon-peach-slushies-507207">
+                      <div class="img" style="background-image:url(https://webknox.com/recipeImages/507207-312x231.jpg)"></div>
+                    </a>
+                </div>
+              </div></li>
+              <div class="clearOnly"></div>
+              ::after
+            </ul>
+          </div>
+          <!-- <div id="previewWidgetHidden" style="display: none"><svg class="circularLoader centered" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve" style="width:200px;height:200px">
+            <path fill="#fff" d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50" transform="rotate(282.289 50 50)">
+              <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50" to="360 50 50" repeatCount="indefinite"></animateTransform>
+            </path>
+          </svg></div>
+        </form> -->
+
+
+    <!-- <section class="page-section">
+      <div class="container">
+        <div class="product-item">
+          <div class="product-item-title d-flex">
+            <div class="bg-faded p-5 d-flex mr-auto rounded">
+              <h2 class="section-heading mb-0">
+                <span class="section-heading-upper">Delicious Treats, Good Eats</span>
+                <span class="section-heading-lower">Bakery &amp; Kitchen</span>
+              </h2>
+            </div>
+          </div>
+          <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/products-02.jpg" alt="">
+          <div class="product-item-description d-flex ml-auto">
+            <div class="bg-faded p-5 rounded">
+              <p class="mb-0">Our seasonal menu features delicious snacks, baked goods, and even full meals perfect for breakfast or lunchtime. We source our ingredients from local, oragnic farms whenever possible, alongside premium vendors for specialty goods.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="container">
+        <div class="product-item">
+          <div class="product-item-title d-flex">
+            <div class="bg-faded p-5 d-flex ml-auto rounded">
+              <h2 class="section-heading mb-0">
+                <span class="section-heading-upper">From Around the World</span>
+                <span class="section-heading-lower">Bulk Speciality Blends</span>
+              </h2>
+            </div>
+          </div>
+          <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="img/products-03.jpg" alt="">
+          <div class="product-item-description d-flex mr-auto">
+            <div class="bg-faded p-5 rounded">
+              <p class="mb-0">Travelling the world for the very best quality coffee is something take pride in. When you visit us, you'll always find new blends from around the world, mainly from regions in Central and South America. We sell our blends in smaller to large bulk quantities. Please visit us in person for more details.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <footer class="footer text-faded text-center py-5">
+      <div class="container">
+        <p class="m-0 small">Copyright &copy; Your Website 2018</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
